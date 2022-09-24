@@ -24,6 +24,30 @@ function RestaurantesPage() {
     })
   }, []);
 
+  const mapBaratinho = () => {
+    return restaurantesBaratinho.map((restaurante) => (
+      <Grid item xs={4} key={restaurante.id}>
+          <div onClick={() => navigate(`/detalhes/${restaurante.id}`)}>{restaurante.nome}</div>
+      </Grid>
+      ));
+  };
+
+  const mapNoPreco = () => {
+    return restaurantesNoPreco.map((restaurante) => (
+      <Grid item xs={4} key={restaurante.id}>
+          <div onClick={() => navigate(`/detalhes/${restaurante.id}`)}>{restaurante.nome}</div>
+      </Grid>
+      ));
+  };
+
+  const mapCaro = () => {
+    return restaurantesCaro.map((restaurante) => (
+      <Grid item xs={4} key={restaurante.id}>
+          <div onClick={() => navigate(`/detalhes/${restaurante.id}`)}>{restaurante.nome}</div>
+      </Grid>
+      ));
+  };
+
   return (
     <Container class="restaurantes">
       <Typography variant="h5" align="center" color="primary" className="title">
@@ -35,38 +59,41 @@ function RestaurantesPage() {
         </div>
       )}
       <div className="sub-header">
+      {restaurantesBaratinho ? 
         <Typography variant="body1" color="primary">
-          Baratinho <span>(</span>$ <span>$ $ $ $)</span>
+            Baratinho <span>(</span>$ <span>$ $ $ $)</span>
+            <div>
+              { mapBaratinho() }
+            </div>
         </Typography>
+        : <></>}
       </div>
-      {restaurantesBaratinho ? restaurantesBaratinho.map((restaurante) => (
-					<Grid item xs={4} key={restaurante.id}>
-							<div onClick={() => navigate(`/detalhes/${restaurante.id}`)}>{restaurante.nome}</div>
-					</Grid>
-				)) : <spam>Não há restaurantes a serem exibidos</spam>}
 
       <div className="sub-header">
-        <Typography variant="body1" color="primary">
-          No preço <span>(</span>$ $ $<span> $ $ $)</span>
-        </Typography>
+        {
+          restaurantesNoPreco ?
+          <Typography variant="body1" color="primary">
+            No preço <span>(</span>$ $ $<span> $ $ $)</span>
+            <div>
+              { mapNoPreco() }
+            </div>
+          </Typography>
+          : <></>
+        }
       </div>
-      {restaurantesNoPreco ? restaurantesNoPreco.map((restaurante) => (
-					<Grid item xs={4} key={restaurante.id}>
-							<div onClick={() => navigate(`/detalhes/${restaurante.id}`)}>{restaurante.nome}</div>
-					</Grid>
-				)) : <spam>Não há restaurantes a serem exibidos</spam>}
-
+      
       <div className="sub-header">
-        <Typography variant="body1" color="primary">
-          Caro, mas vale a pena <span>(</span>$ $ $ $ $ $<span>)</span>
-        </Typography>
+        {
+          restaurantesCaro ?
+          <Typography variant="body1" color="primary">
+            Caro, mas vale a pena <span>(</span>$ $ $ $ $ $<span>)</span>
+            <div>
+              { mapCaro() }
+            </div>
+          </Typography>
+          : <></>
+        }
       </div>
-      {restaurantesCaro ? restaurantesCaro.map((restaurante) => (
-					<Grid item xs={4} key={restaurante.id}>
-							<div onClick={() => navigate(`/detalhes/${restaurante.id}`)}>{restaurante.nome}</div>
-					</Grid>
-				)) : <spam>Não há restaurantes a serem exibidos</spam>}
-
       
     </Container>
   )
