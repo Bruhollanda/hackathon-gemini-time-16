@@ -1,3 +1,15 @@
 .restaurantes .sub-header span {
   color: #DEDDDD;
 }
+
+.restaurante-categoria {
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.restaurante-categoria div {
+  display: flex;
+  flex-direction: column;
+}

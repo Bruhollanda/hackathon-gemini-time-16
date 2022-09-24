@@ -29,7 +29,15 @@ function RestaurantesPage() {
   const mapBaratinho = () => {
     return restaurantesBaratinho.map((restaurante) => (
       <Grid item xs={4} key={restaurante.id}>
-          <div onClick={() => navigate(`/detalhes/${restaurante.id}`)}>{restaurante.nome}</div>
+          <div className="restaurante-categoria" onClick={() => navigate(`/detalhes/${restaurante.id}`)}>
+            <img src={ restaurante.imagem } alt={ restaurante.nome } />
+            <div className="restaurante-categoria-detalhes">
+              <strong>{ restaurante.nome }</strong>
+              <span>{ `${restaurante.distancia}km` }</span>
+              <span>{ `⭐ ${restaurante.nota}` }</span>
+              <span>{ `${restaurante.tempo_medio} - ${restaurante.valor_entrega}` }</span>
+            </div>
+          </div>
       </Grid>
       ));
   };
@@ -37,7 +45,15 @@ function RestaurantesPage() {
   const mapNoPreco = () => {
     return restaurantesNoPreco.map((restaurante) => (
       <Grid item xs={4} key={restaurante.id}>
-          <div onClick={() => navigate(`/detalhes/${restaurante.id}`)}>{restaurante.nome}</div>
+        <div className="restaurante-categoria" onClick={() => navigate(`/detalhes/${restaurante.id}`)}>
+            <img src={ restaurante.imagem } alt={ restaurante.nome } />
+            <div className="restaurante-categoria-detalhes">
+              <strong>{ restaurante.nome }</strong>
+              <span>{ `${restaurante.distancia}km` }</span>
+              <span>{ `⭐ ${restaurante.nota}` }</span>
+              <span>{ `${restaurante.tempo_medio} - ${restaurante.valor_entrega}` }</span>
+            </div>
+          </div>
       </Grid>
       ));
   };
@@ -45,7 +61,15 @@ function RestaurantesPage() {
   const mapCaro = () => {
     return restaurantesCaro.map((restaurante) => (
       <Grid item xs={4} key={restaurante.id}>
-          <div onClick={() => navigate(`/detalhes/${restaurante.id}`)}>{restaurante.nome}</div>
+        <div className="restaurante-categoria" onClick={() => navigate(`/detalhes/${restaurante.id}`)}>
+            <img src={ restaurante.imagem } alt={ restaurante.nome } />
+            <div className="restaurante-categoria-detalhes">
+              <strong>{ restaurante.nome }</strong>
+              <span>{ `${restaurante.distancia}km` }</span>
+              <span>{ `⭐ ${restaurante.nota}` }</span>
+              <span>{ `${restaurante.tempo_medio} - ${restaurante.valor_entrega}` }</span>
+            </div>
+          </div>
       </Grid>
       ));
   };
