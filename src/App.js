@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import BannersPage from "./pages/Banners";
 import CategoriasPage from "./pages/Categorias";
 import RestaurantesPage from "./pages/Restaurantes";
+import DetalhesPage from "./pages/Detalhes";
 
 const themeCustom = createTheme({
   palette: {
@@ -30,6 +31,8 @@ function App() {
           <Route path="/" exact element={<BannersPage />} />
           <Route path="/categorias" exact element={<CategoriasPage />} />
           <Route path="/restaurantes/:id" exact element={<RestaurantesPage />} />
+          {/*Rota de detalhes do produto*/}
+          <Route path="/detalhes/:id" exact element={<DetalhesPage />} />
         </Routes>
       </ThemeProvider>
     </BrowserRouter>
