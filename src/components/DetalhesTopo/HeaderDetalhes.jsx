@@ -1,29 +1,26 @@
 import { Container, Grid, Typography, CircularProgress } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import { getDetalhes } from "../../services/detalhe.service";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import "./Style.css";
-import { PersonPinSharp, StayPrimaryPortraitSharp } from "@material-ui/icons";
 
 function HeaderDetalhe(props){
-  const params = useParams();
-  const restaurante = getDetalhes(props.id);
 
   return (
     <Container className="header">
       <div class="header">
-          <img src={restaurante.imagem  + ".jpg"} alt="" />
+          <img src={props.restaurante.imagem  + ".jpg"} alt="" />
           <div class="info"> 
-            <p>{restaurante.nome}</p>
-            <p>{restaurante.distancia} km</p>
-            <p>{restaurante.nota}</p>
-            <p>{restaurante.tempo_medio}</p>
+            <p>{props.restaurante.nome}</p>
+            <p>{props.restaurante.distancia} km</p>
+            <p>{props.restaurante.nota}</p>
+            <p>{props.restaurante.tempo_medio}</p>
           </div>
       </div>
       <div>
-          <p>{restaurante.descricao}</p>
-          <p>{restaurante.endereco}</p>
+          <p>{props.restaurante.descricao}</p>
+          <p>{props.restaurante.endereco}</p>
       </div>
     </Container>
   )

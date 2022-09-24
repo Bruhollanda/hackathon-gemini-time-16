@@ -2,8 +2,8 @@ import { Container, Grid, Typography, CircularProgress } from "@material-ui/core
 import Filtro from "../../components/Filtro";
 import HeaderDetalhe from "../../components/DetalhesTopo";
 import { useEffect, useState } from "react";
-import { getRestaurantes } from "../../services/restaurantes.service";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { getDetalhes } from "../../services/detalhe.service";
 
 import "./style.css";
 
@@ -11,10 +11,19 @@ import "./style.css";
 
 function DetalhesPage() {
     const params = useParams();
-    
+    const rest = getDetalhes(params.id);
+    const [restaurante, setDetalhes] = useState({});
+
+    useEffect(() => {
+        getDetalhes(params.id).then((response) => {
+            setDetalhes(response.data)
+        })
+    }, []);
+
     return (
         <Container class="restaurantes">
-            <HeaderDetalhe id={params.id} />
+            <p>{restaurante.nome}</p>
+            <HeaderDetalhe restaurante={restaurante} />
             <Filtro/>
         </Container>
     )
