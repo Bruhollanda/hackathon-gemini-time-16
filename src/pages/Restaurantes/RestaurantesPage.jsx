@@ -7,7 +7,6 @@ import "./style.css";
 
 function RestaurantesPage() {
   const navigate = useNavigate();
-  const [nomerestaurante, setNomerestaurante] = useState([]);
   const [restaurantesBaratinho, setRestaurantesBaratinho] = useState([]);
   const [restaurantesNoPreco, setRestaurantesNoPreco] = useState([]);
   const [restaurantesCaro, setRestaurantesCaro] = useState([]);
@@ -17,7 +16,6 @@ function RestaurantesPage() {
 
   useEffect(() => {
     getRestaurantes(params.id).then((response) => {
-      setNomerestaurante(response.restaurante);
       setRestaurantesBaratinho(response.baratinho);
       setRestaurantesNoPreco(response.no_preco);
       setRestaurantesCaro(response.caro);
