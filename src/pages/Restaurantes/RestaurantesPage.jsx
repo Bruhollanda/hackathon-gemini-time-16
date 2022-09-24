@@ -50,11 +50,21 @@ function RestaurantesPage() {
           No preço <span>(</span>$ $ $<span> $ $ $)</span>
         </Typography>
       </div>
+      {restaurantesNoPreco.map((restaurante) => (
+					<Grid item xs={4} key={restaurante.id}>
+							<div>{restaurante.nome}</div>
+					</Grid>
+				))}
       <div className="sub-header">
         <Typography variant="body1" color="primary">
           Caro, mas vale a pena <span>(</span>$ $ $ $ $ $<span>)</span>
         </Typography>
       </div>
+      {restaurantesCaro.map((restaurante) => (
+					<Grid item xs={4} key={restaurante.id}>
+							<div>{restaurante.nome}</div>
+					</Grid>
+				))}
 
       
     </Container>
