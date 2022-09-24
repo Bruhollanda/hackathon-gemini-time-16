@@ -22,7 +22,6 @@ function DetalhesPage() {
 
     return (
         <Container class="restaurantes">
-            <p>{restaurante.nome}</p>
             <HeaderDetalhe restaurante={restaurante} />
             <Filtro/>
         </Container>

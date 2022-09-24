@@ -8,19 +8,21 @@ import "./Style.css";
 function HeaderDetalhe(props){
 
   return (
-    <Container className="header">
+    <Container class="body" className="header">
       <div class="header">
           <img src={props.restaurante.imagem  + ".jpg"} alt="" />
           <div class="info"> 
-            <p>{props.restaurante.nome}</p>
-            <p>{props.restaurante.distancia} km</p>
-            <p>{props.restaurante.nota}</p>
-            <p>{props.restaurante.tempo_medio}</p>
+            <span>{props.restaurante.nome}</span>
+            <span id="km">{props.restaurante.distancia} km</span>
+            <span id="nota">{"⭐" + props.restaurante.nota}</span>
+            <span id="min">{props.restaurante.tempo_medio}</span>
           </div>
       </div>
       <div>
-          <p>{props.restaurante.descricao}</p>
-          <p>{props.restaurante.endereco}</p>
+        <p></p>
+          <span id="desc">{props.restaurante.descricao}</span>
+          <p></p>
+          <span id="end">{props.restaurante.endereco}</span>
       </div>
     </Container>
   )
