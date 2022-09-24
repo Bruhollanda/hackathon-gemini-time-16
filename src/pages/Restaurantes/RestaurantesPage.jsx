@@ -41,7 +41,7 @@ function RestaurantesPage() {
       </div>
       {restaurantesBaratinho ? restaurantesBaratinho.map((restaurante) => (
 					<Grid item xs={4} key={restaurante.id}>
-							<div>{restaurante.nome}</div>
+							<div onClick={() => navigate(`/detalhes/${restaurante.id}`)}>{restaurante.nome}</div>
 					</Grid>
 				)) : <spam>Não há restaurantes a serem exibidos</spam>}
 
@@ -52,7 +52,7 @@ function RestaurantesPage() {
       </div>
       {restaurantesNoPreco ? restaurantesNoPreco.map((restaurante) => (
 					<Grid item xs={4} key={restaurante.id}>
-							<div>{restaurante.nome}</div>
+							<div onClick={() => navigate(`/detalhes/${restaurante.id}`)}>{restaurante.nome}</div>
 					</Grid>
 				)) : <spam>Não há restaurantes a serem exibidos</spam>}
 
@@ -63,7 +63,7 @@ function RestaurantesPage() {
       </div>
       {restaurantesCaro ? restaurantesCaro.map((restaurante) => (
 					<Grid item xs={4} key={restaurante.id}>
-							<div>{restaurante.nome}</div>
+							<div onClick={() => navigate(`/detalhes/${restaurante.id}`)}>{restaurante.nome}</div>
 					</Grid>
 				)) : <spam>Não há restaurantes a serem exibidos</spam>}
 
