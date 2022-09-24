@@ -19,7 +19,7 @@ function CategoriasPage() {
 
 	const getCategorias = async () => {
 		const result = await getAllCategorias();
-		setCategorias(result.data.sort((a, b) => a.name > b.name ? 1 : -1));
+		setCategorias(result.data.sort((a, b) => a.name.normalize('NFD').replace(/[\u0300-\u036f]/g, "") > b.name.normalize('NFD').replace(/[\u0300-\u036f]/g, "") ? 1 : -1));
 		setLoading(false);
 	};
 
