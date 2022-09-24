@@ -11,10 +11,9 @@ function DetalhesPage(){
 
   return (
     <Container class="restaurante">
-      <div>
-          
-
-      </div>
+     <p>
+      {restaurante.nome}
+     </p>
     
     </Container>
   )

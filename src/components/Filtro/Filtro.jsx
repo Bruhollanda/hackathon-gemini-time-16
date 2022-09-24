@@ -1,7 +1,6 @@
 import { Input } from "@material-ui/core";
 import React, { Component } from 'react'
 import { useState } from "react";
-
 import "./styles.css";
 
 function Filtro() {
@@ -11,6 +10,8 @@ function Filtro() {
     <div className="root">
       <Input />
     </div>
+
+
   );
 }
 
