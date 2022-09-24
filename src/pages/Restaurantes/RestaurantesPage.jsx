@@ -1,18 +1,22 @@
-import { Container, Typography, CircularProgress } from "@material-ui/core";
+import { Container, Grid, Typography, CircularProgress } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import { getRestaurantes } from "../../services/restaurantes.service";
+import { useNavigate, useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom"; 
 import "./style.css";
 
 function RestaurantesPage() {
-  const [nomeCategoria, setNomeCategoria] = useState([]);
-  const [restaurantesBaratinho, setRestaurantesBaratinho] = useState();
+  const navigate = useNavigate();
+  const [nomerestaurante, setNomerestaurante] = useState([]);
+  const [restaurantesBaratinho, setRestaurantesBaratinho] = useState([]);
   const [restaurantesNoPreco, setRestaurantesNoPreco] = useState([]);
   const [restaurantesCaro, setRestaurantesCaro] = useState([]);
   const [loading, setLoading] = useState(true);
+  const params = useParams();
 
   useEffect(() => {
-    getRestaurantes().then((response) => {
-      setNomeCategoria(response.categoria)
+    getRestaurantes(params.id).then((response) => {
+      setNomerestaurante(response.restaurante)
       setRestaurantesBaratinho(response.baratinho);
       setRestaurantesNoPreco(response.no_preco);
       setRestaurantesCaro(response.caro);
@@ -23,7 +27,7 @@ function RestaurantesPage() {
   return (
     <Container class="restaurantes">
       <Typography variant="h5" align="center" color="primary" className="title">
-        RESTAURANTES: {nomeCategoria}
+        RESTAURANTES: {nomerestaurante}
       </Typography>
       {loading && (
         <div className="loading">
@@ -35,11 +39,24 @@ function RestaurantesPage() {
           Baratinho <span>(</span>$ <span>$ $ $ $)</span>
         </Typography>
       </div>
-      {restaurantesBaratinho?.map(restaurante => (
-        <div key={restaurante.id}>
-          {restaurante.nome}
-        </div>
-      ))}
+      {restaurantesBaratinho.map((restaurante) => (
+					<Grid item xs={4} key={restaurante.id}>
+							<div>{restaurante.nome}</div>
+					</Grid>
+				))}
+
+      <div className="sub-header">
+        <Typography variant="body1" color="primary">
+          No preço <span>(</span>$ $ $<span> $ $ $)</span>
+        </Typography>
+      </div>
+      <div className="sub-header">
+        <Typography variant="body1" color="primary">
+          Caro, mas vale a pena <span>(</span>$ $ $ $ $ $<span>)</span>
+        </Typography>
+      </div>
+
+      
     </Container>
   )
 }

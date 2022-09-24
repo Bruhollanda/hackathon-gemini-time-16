@@ -7,6 +7,7 @@ import {
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAllCategorias } from "../../services/categorias.service";
+import { useParams } from "react-router-dom";
 
 import "./styles.css";
 
@@ -14,6 +15,7 @@ function CategoriasPage() {
 	const navigate = useNavigate();
 	const [categorias, setCategorias] = useState([]);
 	const [loading, setLoading] = useState(true);
+	const { id } = useParams();
 
 	const getCategorias = async () => {
 		const result = await getAllCategorias();
