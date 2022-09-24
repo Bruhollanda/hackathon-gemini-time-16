@@ -23,7 +23,7 @@ function DetalhesPage() {
     return (
         <Container class="restaurantes">
             <HeaderDetalhe restaurante={restaurante} />
-            <Filtro/>
+            <Filtro restaurante={restaurante}/>
         </Container>
     )
 }

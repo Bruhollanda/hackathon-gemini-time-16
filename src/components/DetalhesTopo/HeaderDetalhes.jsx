@@ -10,7 +10,7 @@ function HeaderDetalhe(props){
   return (
     <Container class="body" className="header">
       <div class="header">
-          <img src={props.restaurante.imagem  + ".jpg"} alt="" />
+          <img class="img" src={props.restaurante.imagem  + ".jpg"} alt="" />
           <div class="info"> 
             <span id="title">{props.restaurante.nome}</span>
             <span id="km">{props.restaurante.distancia} km</span>
