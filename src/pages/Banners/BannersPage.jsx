@@ -14,7 +14,7 @@ import "./style.css";
 function BannersPage() {
   const navigate = useNavigate();
   const [listaBanners, setListaBanners] = useState([]);
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(3);
   const [loading, setLoading] = useState(true);
   const selectedBanner = listaBanners[index];
   const isFirst = index === 0;
