@@ -1,0 +1,42 @@
+div {
+    display: flex;
+}
+
+.categoria {
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.itens {
+    margin: 5px;
+    padding: 2px;
+    justify-content: flex-start;
+    background-color: lightgrey;
+}
+
+.texto {
+    align-items: space-between;
+}
+
+h1 {
+    color: black;
+}
+
+p1 {
+    color: grey;
+    align-self: center;
+}
+
+p {
+    color: grey;
+}
+
+#nome {
+    align-self: flex-start;
+}
+
+#preco {
+    align-self: flex-start
+}
