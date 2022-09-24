@@ -47,13 +47,13 @@ function RestaurantesPage() {
             <div className="restaurante-categoria-detalhes">
               <strong>{ restaurante.nome }</strong>
               <span>{ `${restaurante.distancia}km` }</span>
-              <span>{ `⭐ ${restaurante.nota}` }</span>
+              <span className="estrela">{ `⭐ ${restaurante.nota}` }</span>
               <span>{ `${restaurante.tempo_medio} - ${restaurante.valor_entrega}` }</span>
             </div>
           </div>
       </Grid>
       ));
-  };
+  }; 
 
   const mapCaro = () => {
     return restaurantesCaro.map((restaurante) => (

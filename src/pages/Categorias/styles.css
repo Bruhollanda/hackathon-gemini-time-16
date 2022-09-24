@@ -5,15 +5,16 @@
 .categorias .textNames { 
     text-align: center; 
     font-family: Verdana, Geneva, Tahoma, sans-serif; 
-    font-size: 14px; 
+    font-size: 12px; 
     color: gray; 
 }
 
 .categorias .containerCategorias .imgCategory { 
-    max-width: 350px; 
+    width: 100px; 
     border-top-left-radius: 15px; 
     border-top-right-radius: 15px; 
     margin-bottom: 4px; 
+    height: 100px;
 } 
 
  
