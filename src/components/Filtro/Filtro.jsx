@@ -60,7 +60,7 @@ class Filtro extends React.Component {
 
                 <br/>
                 <br/>
-                {categorias(this.state.restauranteFiltrado.cardapio)}
+ 
             </div>
         );
       }
