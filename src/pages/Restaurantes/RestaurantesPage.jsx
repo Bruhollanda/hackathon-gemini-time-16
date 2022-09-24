@@ -11,15 +11,17 @@ function RestaurantesPage() {
   const [restaurantesBaratinho, setRestaurantesBaratinho] = useState([]);
   const [restaurantesNoPreco, setRestaurantesNoPreco] = useState([]);
   const [restaurantesCaro, setRestaurantesCaro] = useState([]);
+  const [categoryName, setCategoryName] = useState("");
   const [loading, setLoading] = useState(true);
   const params = useParams();
 
   useEffect(() => {
     getRestaurantes(params.id).then((response) => {
-      setNomerestaurante(response.restaurante)
+      setNomerestaurante(response.restaurante);
       setRestaurantesBaratinho(response.baratinho);
       setRestaurantesNoPreco(response.no_preco);
       setRestaurantesCaro(response.caro);
+      setCategoryName(response.categoria);
       setLoading(false);
     })
   }, []);
@@ -51,7 +53,7 @@ function RestaurantesPage() {
   return (
     <Container class="restaurantes">
       <Typography variant="h5" align="center" color="primary" className="title">
-        RESTAURANTES: {nomerestaurante}
+        RESTAURANTES: {categoryName}
       </Typography>
       {loading && (
         <div className="loading">
