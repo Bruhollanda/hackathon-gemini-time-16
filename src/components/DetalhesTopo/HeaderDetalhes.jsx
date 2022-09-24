@@ -12,7 +12,7 @@ function HeaderDetalhe(props){
       <div class="header">
           <img src={props.restaurante.imagem  + ".jpg"} alt="" />
           <div class="info"> 
-            <span>{props.restaurante.nome}</span>
+            <span id="title">{props.restaurante.nome}</span>
             <span id="km">{props.restaurante.distancia} km</span>
             <span id="nota">{"⭐" + props.restaurante.nota}</span>
             <span id="min">{props.restaurante.tempo_medio}</span>
