@@ -1,6 +1,7 @@
 .restaurantes .sub-header span {
   color: #DEDDDD;
-  width: 250px;
+  width: 100px;
+  position: relative;
   
  
 }
